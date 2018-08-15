@@ -5,7 +5,7 @@ import becker.robots.*;
 /** 
  * Practica de los conceptos de Programacion Estructurada
  * @author Fabian Andres Giraldo */
-public class RobotBase
+public class Ejercicio2
 {    
        //Declaracion de Variables -- Forma temporal - No es buena practica tener
        //variables estaticas
@@ -19,47 +19,45 @@ public class RobotBase
             
             //Direction.NORTH, EAST, SOUTH, WEST
             //Definicion de la ubicacion del robot, Ciudad, posicion, Direccion, Numero things en el bolso.
-            estudiante = new Robot(objetos,0, 2, Direction.WEST,10);
+            estudiante = new Robot(objetos,1, 2, Direction.SOUTH,10);
             
-            for(int i=0; i<2; i++){
+            for(int i=0; i<3; i++){
                 estudiante.turnLeft();
             }
             
             estudiante.move ();
             
-            for(int a=0; a<3;a++){
-                estudiante.turnLeft();
-            }
+            estudiante.turnLeft();
             
-            for(int i=0; i<3; i++){
-                estudiante.move();
-            }
+            estudiante.move();
+                    
+            estudiante.turnLeft();
             
-            for(int i=0; i<3; i++){
-                estudiante.turnLeft();
-            }
+            estudiante.move();
             
-            for(int i=0; i<3; i++){
-                estudiante.move();
-            }
-            
-            for(int i=0; i<3; i++){
-                estudiante.turnLeft();
-            }
-            
-            for(int i=0; i<3; i++){
-                estudiante.move();
-            }
-            
-            for(int i=0; i<3; i++){
-                estudiante.turnLeft();
-            }
+            estudiante.canPickThing();
+        
+            estudiante.pickThing();
             
             for(int i=0; i<2; i++){
-                estudiante.move();
+                estudiante.turnLeft();
             }
             
-            for(int i=0; i<2; i++){
+            estudiante.move();
+            
+            for(int i=0; i<3; i++){
+                estudiante.turnLeft();
+            }
+            
+            estudiante.move();
+            
+            for(int i=0; i<3; i++){
+                estudiante.turnLeft();
+            }
+            
+            estudiante.move();
+            
+            for(int i=0; i<3; i++){
               estudiante.turnLeft();
             }
 	}
