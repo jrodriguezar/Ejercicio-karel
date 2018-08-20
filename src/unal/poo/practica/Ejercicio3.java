@@ -6,7 +6,7 @@ import becker.robots.*;
  * Practica de los conceptos de Programacion Estructurada
  * @author Fabian Andres Giraldo */
 public class Ejercicio3
-{    
+{      
        //Declaracion de Variables -- Forma temporal - No es buena practica tener
        //variables estaticas
         public static City objetos;
@@ -41,8 +41,9 @@ public class Ejercicio3
                 for(int i=0; i<contador; i++){
                     if(estudiante.canPickThing()==false){
                         estudiante.putThing();
-                        estudiante.move();
+                        //estudiante.move();
                     }
+                    estudiante.move();
                 }
             
                 for(int i=0; i<2; i++){
