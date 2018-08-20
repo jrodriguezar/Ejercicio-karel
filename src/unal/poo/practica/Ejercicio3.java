@@ -19,11 +19,46 @@ public class Ejercicio3
             
             //Direction.NORTH, EAST, SOUTH, WEST
             //Definicion de la ubicacion del robot, Ciudad, posicion, Direccion, Numero things en el bolso.
-            estudiante = new Robot(objetos,5, 1, Direction.SOUTH,0);
+            estudiante = new Robot(objetos,0, 1, Direction.SOUTH,0);
             
-            int x;
-            int y;
+            int contador=0;
             
+            int Numdefilas=4;
+            
+            for(int a=0; a<Numdefilas; a++){
+            
+                estudiante.move();
+            
+                for(int i=0; i<contador+1; i++){
+                    if(estudiante.canPickThing()==true){
+                        contador++;
+                        estudiante.pickThing();
+                    }
+                }
+            
+                estudiante.turnLeft();
+            
+                for(int i=0; i<contador; i++){
+                    if(estudiante.canPickThing()==false){
+                        estudiante.putThing();
+                        estudiante.move();
+                    }
+                }
+            
+                for(int i=0; i<2; i++){
+                    estudiante.turnLeft();
+                }
+            
+                for(int i=0; i<contador; i++){
+                    estudiante.move();
+                }
+            
+                estudiante.turnLeft();
+            
+                contador=0;
+            }
+            
+            estudiante.move();
 	}
         
         public static void creacionFuncion(int parametroEntrada){
