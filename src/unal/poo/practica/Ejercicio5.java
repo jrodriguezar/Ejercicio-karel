@@ -9,16 +9,60 @@ import java.awt.Color;
  * @author Fabian Andres Giraldo */
 public class Ejercicio5
 {    
-        public static void ordenarpilas(int parametroEntrada){
-            for (int i = 0; i < parametroEntrada; i++) 
+        public static void movimiento(int Numpasos){
+            for (int i = 0; i < Numpasos; i++) 
                 estudiante.move();
-                
+        }
+        
+        public static void girar(int giro){
+            for(int i=0; i<giro; i++){
+                estudiante.turnLeft();
+            }
+        }
+        
+        public static void revisaryrecoger(){
+            if(estudiante.canPickThing()==true){
+                estudiante.pickThing();
+            }
+        }
+        
+        public static void barrerlinea(int distancia){
+            for(int i=0; i<distancia; i++){
+                revisaryrecoger();
+                estudiante.move();
+            }
+        }
+        
+        public static void barrercuadro(int x, int y){
+            barrerlinea(x);
+            
+            revisaryrecoger();
+            
+            girar(3);
+            
+            barrerlinea(y);
+            
+            revisaryrecoger();
+            
+            girar(3);
+            
+            barrerlinea(x);
+            
+            revisaryrecoger();
+            
+            girar(3);
+            
+            barrerlinea(y-1);
+            
+            revisaryrecoger();
+            
+            girar(3);
         }
         public static City objetos;
         public static Robot estudiante;
         
 	public static void main (String[] args){
-            //Declarar la creacion de la ciudad
+            
             objetos = new City("citycita.txt");
 	    objetos.showThingCounts(true);
             
@@ -26,12 +70,8 @@ public class Ejercicio5
             
             estudiante.setIcon(new Minion());
             
+            barrercuadro(6,8);
             
 	}
-        
-        public static void creacionFuncion(int parametroEntrada){
-            for (int i = 0; i < parametroEntrada; i++) 
-                estudiante.move();
-        }
 }
 
