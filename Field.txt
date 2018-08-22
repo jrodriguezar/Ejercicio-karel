@@ -19,3 +19,4 @@ Harvest a Field
     becker.robots.Thing 4 1
     becker.robots.Thing 4 1
 # wall
+    becker.robots.Wall 3 5 NORTH
