@@ -27,7 +27,7 @@ public class Minion extends Icon
         g.fillRect(20, 45, 10, 10);
         g.fillRect(70, 45, 10, 10);
         // Draw arms
-        g.setColor(Color.GREEN);
+        g.setColor(Color.BLACK);
         g.fillOval(20, 20, 10, 35);
         g.fillOval(70, 20, 10, 35);
         // Draw eyes

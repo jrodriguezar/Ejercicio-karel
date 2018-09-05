@@ -1,8 +1,6 @@
 package unal.poo.practica;
 
 import becker.robots.*;
-import becker.robots.icons.Icon;
-import java.awt.Color;
 
 /** 
  * Practica de los conceptos de Programacion Estructurada
